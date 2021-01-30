@@ -16,4 +16,4 @@ app.use(express.static("./static"));
 
 app.use('/', indexRouter);
 
-http.createServer(app).listen(3000);
+http.createServer(app).listen(process.env.PORT || 3000);
