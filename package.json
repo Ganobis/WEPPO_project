@@ -1,25 +1,26 @@
 {
-  "name": "weppo_project",
-  "version": "1.0.0",
-  "description": "super projekt",
-  "main": "app.js",
-  "dependencies": {
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "http": "^0.0.1-security"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ganobis/WEPPO_project.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ganobis/WEPPO_project/issues"
-  },
-  "homepage": "https://github.com/Ganobis/WEPPO_project#readme"
+    "name": "weppo_project",
+    "version": "1.0.0",
+    "description": "super projekt",
+    "main": "app.js",
+    "dependencies": {
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "http": "^0.0.1-security"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Ganobis/WEPPO_project.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Ganobis/WEPPO_project/issues"
+    },
+    "homepage": "https://github.com/Ganobis/WEPPO_project#readme"
 }
