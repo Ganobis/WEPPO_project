@@ -1,38 +1,42 @@
 let express = require('express');
 let router = express.Router();
+let db = require('../database').db;
+let Product = require('../database').Product;
+let Sequelize = require('sequelize');
+let Op = Sequelize.Op;
 
 router.get('/', (req, res) => {
-
-    res.render('index', {
-        title: 'Port-Able'
-    })
-
+    Product.findAll()
+        .then(products =>
+            res.render('index', {
+                title: 'Shop app',
+                products,
+                session: req.session
+            }))
+        .catch(err => console.log(err));
 });
 
-router.get( '/login', (req, res) => {
-    res.render('login');
-   });
-   
-router.post('/login', (req, res) => {
-    var username = req.body.login;
-    var pwd = req.body.password;
+router.get('/search', (req, res) => {
+    let { term } = req.query;
 
-    if (username == pwd) {
-        // wydanie ciastka
-        res.cookie('user', username, { signed: true });
-        // przekierowanie
-        var returnUrl = req.query.returnUrl;
-        res.redirect(returnUrl);
+    term = term.toLowerCase();
+    if (term === '') {
+        res.redirect('/')
     } else {
-        res.render('login', { message: "Zła nazwa logowania lub hasło" }
-        );
+        Product.findAll({
+            where: Sequelize.where(
+                Sequelize.fn('lower', Sequelize.col('title')), {
+                [Op.like]: '%'+term+'%'
+            }
+            )
+        })
+            .then(products => res.render('index', {
+                title: 'Shop App',
+                products,
+                session: req.session
+            }))
+            .catch(err => console.log(err));
     }
-});
-
-
-router.get('/register', (req, res) => {
-    res.render('/register')
-});
-
+})
 
 module.exports = router;
