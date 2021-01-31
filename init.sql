@@ -1,9 +1,16 @@
+USE heroku_683b595d91ac4c4;
+
+SET foreign_key_checks = 0;
 DROP TABLE IF EXISTS urzytkownicy;
+DROP TABLE IF EXISTS produkty;
+DROP TABLE IF EXISTS zamowione;
+DROP TABLE IF EXISTS zamowienia;
+SET foreign_key_checks = 0;
 
 CREATE TABLE urzytkownicy (
     ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Login CHAR(50) NOT NULL,
-    Haslo CHAR(256) NOT NULL,
+    Haslo CHAR(255) NOT NULL,
     Imie CHAR(50),
     Nazwisko CHAR(50),
     Miasto CHAR(30),
@@ -12,8 +19,6 @@ CREATE TABLE urzytkownicy (
     Nr_telefonu CHAR(9),
     Administrator BOOLEAN DEFAULT false
 );
-
-DROP TABLE IF EXISTS produkty;
 
 CREATE TABLE produkty (
 	ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -25,14 +30,10 @@ CREATE TABLE produkty (
     Ilosc INT
 );
 
-DROP TABLE IF EXISTS zamowione;
-
 CREATE TABLE zamowione (
 	ID_zamowienia INT NOT NULL,
     ID_produktu INT NOT NULL
 );
-
-DROP TABLE IF EXISTS zamowienia;
 
 CREATE TABLE zamowienia (
 	ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -44,4 +45,4 @@ ADD FOREIGN KEY (ID_zamowienia) REFERENCES zamowienia(ID),
 ADD FOREIGN KEY (ID_produktu) REFERENCES produkty(ID);
 
 ALTER TABLE zamowienia
-ADD FOREIGN KEY (ID_uzytkownicy) REFERENCES uzytkownicy(ID);
+ADD FOREIGN KEY (ID_urzytkownicy) REFERENCES urzytkownicy(ID);
