@@ -4,13 +4,16 @@
     "description": "super projekt",
     "main": "app.js",
     "dependencies": {
+        "bcrypt": "^5.0.0",
         "cookie-parser": "^1.4.5",
         "express": "^4.17.1",
         "express-session": "^1.17.1",
         "http": "^0.0.1-security",
         "moment": "^2.29.1",
         "mysql": "^2.18.1",
-        "pug": "^3.0.0"
+        "mysql2": "^2.2.5",
+        "pug": "^3.0.0",
+        "sequelize": "^6.5.0"
     },
     "devDependencies": {},
     "scripts": {

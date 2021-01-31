@@ -22,16 +22,16 @@ db.connect((err) => {
 });
 
 // Tymczasowe
-app.get('/insert_temp', (req, res) => {
-    let sql = 'INSERT INTO urzytkownicy (Login,Haslo,Imie,Nazwisko,Miasto,Adres,Email,Nr_telefonu) VALUES (\'login\',\'haslo\',\'Wojtek\',\'Ganobis\',\'Wroclaw\',\'Kamienna 13\',\'ganobis@gmail.com\',\'123456789\');'
-    db.query(sql, (err, result) => {
-        if (err) {
-            throw err;
-        }
-        console.log(result);
-        res.send('Dodano pomyslnie');
-    });
-});
+// app.get('/insert_temp', (req, res) => {
+//     let sql = 'INSERT INTO urzytkownicy (Login,Haslo,Imie,Nazwisko,Miasto,Adres,Email,Nr_telefonu) VALUES (\'login\',\'haslo\',\'Wojtek\',\'Ganobis\',\'Wroclaw\',\'Kamienna 13\',\'ganobis@gmail.com\',\'123456789\');'
+//     db.query(sql, (err, result) => {
+//         if (err) {
+//             throw err;
+//         }
+//         console.log(result);
+//         res.send('Dodano pomyslnie');
+//     });
+// });
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
