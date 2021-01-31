@@ -4,7 +4,7 @@ let router = express.Router();
 router.get('/', (req, res) => {
 
     res.render('index', {
-        title: 'Shop app'
+        title: 'Port-Able'
     })
 
 });
