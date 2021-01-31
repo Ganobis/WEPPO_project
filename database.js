@@ -35,6 +35,9 @@ const User = db.define('user', {
     timestamps: false
 });
 
+User.sync();
+console.log("The table for the User model was just (re)created!");
+
 const Product = db.define('product', {
     image: {
         type: Sequelize.STRING
@@ -51,6 +54,9 @@ const Product = db.define('product', {
 }, {
     timestamps: false
 });
+
+Product.sync();
+console.log("The table for the User model was just (re)created!");
 
 const Order = db.define('order', {
     customer: {
@@ -81,6 +87,9 @@ const Order = db.define('order', {
 }, {
     timestamps: false
 });
+
+Order.sync();
+console.log("The table for the User model was just (re)created!");
 
 module.exports = {
     db: db,
