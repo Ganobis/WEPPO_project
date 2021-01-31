@@ -21,6 +21,7 @@ db.connect((err) => {
 });
 
 let indexRouter = require('./routes/index');
+let singupRouter = require('./require/singup');
 
 var app = express();
 
@@ -46,5 +47,6 @@ app.use(express.static("./static"));
 // });
 
 app.use('/', indexRouter);
+app.use('/singup', singupRouter);
 
 http.createServer(app).listen(process.env.PORT || 3000);
