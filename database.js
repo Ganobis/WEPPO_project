@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
-let db = new Sequelize('init', 'root', '', {
-    host: 'localhost',
+let db = new Sequelize('heroku_683b595d91ac4c4', 'b0f6e52758643f', 'a0c740bc', {
+    host: 'us-cdbr-east-03.cleardb.com',
     dialect: 'mysql',
 
     pool: {
@@ -33,8 +33,7 @@ const User = db.define('user', {
     }
 }, {
     timestamps: false
-}
-);
+});
 
 const Product = db.define('product', {
     image: {
