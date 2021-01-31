@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
-let db = new Sequelize('heroku_683b595d91ac4c4', 'b0f6e52758643f', 'a0c740bc', {
-    host: 'us-cdbr-east-03.cleardb.com',
+let db = new Sequelize('ofrm19ex90au08of', 'ekgc4xu0i6tyzjka', 'v9vgj5xalj2fm4o6', {
+    host: 'j21q532mu148i8ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
     dialect: 'mysql',
 
     pool: {
