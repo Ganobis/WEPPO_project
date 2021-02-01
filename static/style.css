@@ -1,59 +1,61 @@
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     color: #2265b3;
-  }
-  
-  a {
+}
+
+a {
     color: #00b7ff;
-  }
-  
-  .thumbnail img {
+}
+
+.thumbnail img {
     max-height: 200px;
     padding: 10px;
-  }
-  
-  .thumbnail .description {
+}
+
+.thumbnail .description {
     color: gray;
-  }
-  
-  .price {
+}
+
+.price {
     font-weight: bold;
     font-size: 16px;
-  }
-  
-  ul#management {
+}
+
+ul#management {
     padding-right: 30px;
-  }
-  
-  .main-section {
+}
+
+.main-section {
     max-width: 400px;
     margin: 0 auto;
     margin-top: 130px;
     background-color: #525252;
     border-radius: 20px;
-  }
-  
-  .main-section form {
+}
+
+.main-section form {
     padding: 20px;
-  }
-  
-  .main-section button {
+}
+
+.main-section button {
     margin-top: 10px;
     font-size: 20px;
-  }
-  
-  .main-section h2 {
+}
+
+.main-section h2 {
     padding: 20px;
     color: white;
-  }
-  
-  .main-section .links {
+}
+
+.main-section .links {
     display: block;
     padding-bottom: 15px;
     font-size: 18px;
-  }
-  
-  .alert {
+}
+
+.alert {
     margin-top: 15px;
-  }
-  /*# sourceMappingURL=style.css.map */
+}
+
+
+/*# sourceMappingURL=style.css.map */

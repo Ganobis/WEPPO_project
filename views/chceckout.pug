@@ -8,14 +8,14 @@ mixin product(imgSource, title, description, price, id, amount)
                 h3=title
                 p.description=description
                 div.clearfix
-                    .price.float-left=price + "$ x" + amount + " [ " + amount * price + "$ ]"
+                    .price.float-left=price + "zł x" + amount + " [ " + amount * price + "zł ]"
                     a.btn.btn-success.float-right(href="/cart/add/"+id role="button") +
                     a.btn.btn-danger.float-right(href="/cart/remove/"+id role="button") -
 
 block content
-    h2 Checkout page
-    h4 Total price: #{total_price}$
-    a.btn.btn-success(href="/cart/make_order/" role="button") Apply and make order
+    h2 Zamówienie
+    h4 Całkowity koszt: #{total_price}zł
+    a.btn.btn-success(href="/cart/make_order/" role="button") Potwierdź i zamów
     .row.d-flex.justify-content-around
         each order in orders
             - var product = order.product

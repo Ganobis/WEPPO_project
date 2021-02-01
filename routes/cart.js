@@ -74,7 +74,7 @@ router.get('/checkout', (req, res, next) => {
 });
 
 async function get_total_value(cart) {
-    return await get_orders(cart).then(o=>{
+    return await get_orders(cart).then(o => {
         return o.reduce((acc, curr) => acc + (curr.amount * curr.product.price), 0);
     });
 }
@@ -82,7 +82,7 @@ async function get_total_value(cart) {
 router.get('/make_order', (req, res, next) => {
     let session = req.session;
     if (session.valid) {
-        User.findOne({where:{id:req.session.userid}}).then(user => {
+        User.findOne({ where: { id: req.session.userid } }).then(user => {
             get_total_value(session.cart).then(value => {
                 if (value > 0)
                     Order.create({
@@ -91,9 +91,8 @@ router.get('/make_order', (req, res, next) => {
                         json: JSON.stringify(req.session.cart)
                     }).then(() => {
                         user.norders++;
-                        user.money_spent += value;
                         session.cart = {};
-                        user.save().then(() =>{
+                        user.save().then(() => {
                             res.redirect('/orders');
                         });
                     });

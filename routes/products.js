@@ -11,10 +11,10 @@ router.get('/details/:id', (req, res, next) => {
     }).then(p => {
         if (!p) res.send('<h1>404</h1>');
 
-        res.render('index', {
-           title: p.title,
-           products: [p],
-           session: req.session
+        res.render('product', {
+            title: p.title,
+            products: [p],
+            session: req.session
         });
     });
 });
@@ -48,7 +48,7 @@ router.post('/add', (req, res) => {
                 title,
                 description,
                 price
-            }).then(p => res.redirect('/product/details/'+p.id));
+            }).then(p => res.redirect('/product/details/' + p.id));
         }
     } else {
         res.redirect('/');
@@ -69,7 +69,7 @@ router.get('/remove/:id', (req, res, next) => {
     }
 });
 
-router.get('/edit/:id', function (req, res, next) {
+router.get('/edit/:id', function(req, res, next) {
     if (req.session.admin) {
         Product.findOne({
             where: {

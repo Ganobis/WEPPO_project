@@ -4,7 +4,7 @@ mixin order(id, customer, value, details, status, created_at, updated_at)
     th(scope="row")=id
     if session.admin
         td=customer
-    td=value + "$"
+    td=value + "zł"
     td=details
     if status == 'processing'
         td
