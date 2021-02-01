@@ -59,7 +59,10 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff
+    background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/10/website-background-texture-14-728x410.jpg");
+
+    background-color: #ffffff;
+    
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -594,6 +597,16 @@ pre code {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px
+}
+.col-md-4 {
+    background-color: white;
+    border: 5px solid rgb(150, 150, 150);
+    border-radius: 20px;
+    margin: 15px;
+}
+
+.table {
+    background-color: white;
 }
 
 .col {

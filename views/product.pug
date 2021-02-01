@@ -4,7 +4,7 @@ mixin product(imgSource, title, description, price, id)
     .col-sm-6.col-md-4
         .thumbnail.text-center
             a()
-                img.img_responsive(src=imgSource alt="err" style='width:250px; height:400px; object-fit: contain;')
+                img.img_responsive(src=imgSource alt="err" style='width:250px; height:350px; object-fit: contain;')
             .caption
                 a.h4=title
                 div.clearfix
@@ -12,7 +12,7 @@ mixin product(imgSource, title, description, price, id)
                 if session.admin
                     a.btn.btn-danger.float-center(href="/product/remove/"+id role="button") Usuń produkt
                     a.btn.btn-info.float-center(href="/product/edit/"+id role="button") Edytuj
-                a.btn.btn-success.float-center(href="/cart/add/"+id role="button") Dodaj do koszyja
+                a.btn.btn-success.float-center(href="/cart/add/"+id role="button") Dodaj do koszyka
                 p.description=description
 
 block content

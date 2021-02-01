@@ -4,7 +4,7 @@ mixin product(imgSource, title, description, price, id)
     .col-sm-6.col-md-4
         .thumbnail.text-center
             a(href="/product/details/"+id)
-                img.img_responsive(src=imgSource alt="err" style='width:250px; height:400px; object-fit: contain;')
+                img.img_responsive(src=imgSource alt="err" style='width:250px; height:350px; object-fit: contain;')
             .caption
                 a(href="/product/details/"+id)
                     h4=title
@@ -14,6 +14,8 @@ mixin product(imgSource, title, description, price, id)
                     a.btn.btn-danger.float-center(href="/product/remove/"+id role="button") Usuń
                     a.btn.btn-info.float-center(href="/product/edit/"+id role="button") Edytuj
                 a.btn.btn-success.float-center(href="/cart/add/"+id role="button") Dodaj do koszyka
+                br
+                br
 
 block content
     .row.d-flex.justify-content-around
