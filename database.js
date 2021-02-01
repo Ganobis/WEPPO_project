@@ -70,7 +70,7 @@ const Order = db.define('order', {
     },
     status: {
         type: Sequelize.STRING,
-        defaultValue: 'Przetwarzania'
+        defaultValue: 'przetwarzanie'
     },
     created_at: {
         type: 'TIMESTAMP',

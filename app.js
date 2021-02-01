@@ -50,16 +50,9 @@ app.use('/orders', ordersRouter);
 app.get('/logout', (req, res) => {
     req.session.destroy()
     res.redirect('/')
-})
-
-app.use(function(req, res, next) {
-    next(createError(404));
 });
 
 app.use(express.static("./static"));
-// app.use((req, res) => {
-//     res.render('index', { username: 'foo' });
-// });
 
 app.use('/', indexRouter);
 

@@ -13,7 +13,7 @@ block content
                     | #{product.description}
             .form-group
                 input.form-control(type="number" name="price" step="0.01" placeholder="Cena" value=product.price)
-            button.btn.btn-success(type="submit") Save
+            button.btn.btn-success(type="submit") Zapisz
             if (errors != undefined) 
                 each err in errors
                     .alert.alert-danger=err.msg
