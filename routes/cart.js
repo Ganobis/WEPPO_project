@@ -61,7 +61,7 @@ router.get('/checkout', (req, res, next) => {
 
         get_orders(req.session.cart).then(o => {
             res.render('checkout', {
-                title: 'Checkout page',
+                title: 'Podsumowanie',
                 orders: o,
                 session: req.session,
                 total_price: o.reduce((acc, curr) => acc + (curr.amount * curr.product.price), 0)

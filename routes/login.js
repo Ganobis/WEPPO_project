@@ -6,7 +6,7 @@ const User = require('../database').User;
 const bcrypt = require('bcrypt');
 
 /* GET login page. */
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
     if (req.session.valid) {
         res.redirect('/');
     }
@@ -21,7 +21,8 @@ router.post('/', (req, res) => {
 
     User.findOne({
         where: {
-            username: { [Op.like]: username }
+            username: {
+                [Op.like]: username }
         }
     }).then(user => {
         if (user) {
@@ -37,14 +38,14 @@ router.post('/', (req, res) => {
                 } else {
                     console.log(err);
                     res.render('login', {
-                        title: 'Log in failed',
+                        title: 'Błędne hasło lub nazwa użytkownika',
                         session: req.session
                     });
                 }
             })
         } else {
             res.render('login', {
-                title: 'Log in failed',
+                title: 'Błędne hasło lub nazwa użytkownika',
                 session: req.session
             })
         }

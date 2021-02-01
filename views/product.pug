@@ -10,9 +10,9 @@ mixin product(imgSource, title, description, price, id)
                 div.clearfix
                     .price.float-center=price + " zł"
                 if session.admin
-                    a.btn.btn-danger.float-center(href="/product/remove/"+id role="button") Remove
-                    a.btn.btn-info.float-center(href="/product/edit/"+id role="button") Edit
-                a.btn.btn-success.float-center(href="/cart/add/"+id role="button") Add to cart
+                    a.btn.btn-danger.float-center(href="/product/remove/"+id role="button") Usuń produkt
+                    a.btn.btn-info.float-center(href="/product/edit/"+id role="button") Edytuj
+                a.btn.btn-success.float-center(href="/cart/add/"+id role="button") Dodaj do koszyja
                 p.description=description
 
 block content
