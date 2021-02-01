@@ -4,9 +4,9 @@ mixin order(id, customer, value, details, status, created_at, updated_at)
     th(scope="row")=id
     if session.admin
         td=customer
-    td=value + "$"
+    td=value + "zł"
     td=details
-    if status == 'processing'
+    if status == 'przetwarzanie'
         td
             span.badge.badge-info=status
     else
@@ -14,22 +14,22 @@ mixin order(id, customer, value, details, status, created_at, updated_at)
             span.badge.badge-success=status
     td=moment(created_at).format("HH:mm DD/MM/YY")
     td=moment(updated_at).format("HH:mm DD/MM/YY")
-    if session.admin && status == 'processing'
+    if session.admin && status == 'przetwarzanie'
         td
-            a.btn.btn-success(href="/orders/change_status/"+id role="button") Change status
+            a.btn.btn-success(href="/orders/change_status/"+id role="button") Zmień status na wysłane
 
 block content
     .row
         table.table
             tr
-                th id
+                th ID
                 if session.admin
-                    th customer
-                th value
-                th details
-                th status
-                th created at
-                th updated at
+                    th Klient_ID
+                th Wartość
+                th Szczegóły
+                th Status
+                th Data zamówienia
+                th Ostatnia aktualizacja
                 if session.admin
                     th=""
                 each order in orders 

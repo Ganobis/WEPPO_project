@@ -6,11 +6,11 @@ let Op = Sequelize.Op;
 let bcrypt = require('bcrypt');
 
 /* GET register page. */
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
     if (req.session.valid) {
         res.redirect('/');
     }
-    res.render('register', { title: 'Sign Up', session: req.session });
+    res.render('register', { title: 'Zarejestruj', session: req.session });
 });
 
 // router.get('/add', (req, res) => {
@@ -26,30 +26,32 @@ router.post('/', (req, res) => {
     let errors = [];
 
     if (!username || !password) {
-        errors.push({ msg: 'Please fill in all fields' });
+        errors.push({ msg: 'Uzypełnij login i hasło' });
     }
 
     if (password.length < 6) {
-        errors.push({ msg: 'Password should be at least 6 characters' });
+        errors.push({ msg: 'Hasło musi zawierać 6 liter/cyfr/znaków' });
     }
 
     if (errors.length > 0) {
         res.render('register', {
-            title: 'Sign Up',
+            title: 'Zarejestruj',
             session: req.session,
             errors
         })
     } else {
         User.findAll({
             where: {
-                username: { [Op.like]: username }
+                username: {
+                    [Op.like]: username
+                }
             }
         }).then(user => {
             if (user[0]) {
                 console.log(user);
-                errors.push({ msg: 'User with that username already exists' });
+                errors.push({ msg: 'Nazwa użytkownika jest zajęta' });
                 res.render('register', {
-                    title: 'Sign Up',
+                    title: 'Zajerestruj',
                     session: req.session,
                     errors
                 });

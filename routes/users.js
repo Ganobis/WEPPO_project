@@ -5,12 +5,12 @@ let Sequelize = require('sequelize');
 let Op = Sequelize.Op;
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
     if (req.session.admin) {
         User.findAll()
             .then(users => {
                 res.render('users', {
-                    title: 'Users page',
+                    title: 'Użytkownicy',
                     session: req.session,
                     users
                 });

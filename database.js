@@ -26,10 +26,6 @@ const User = db.define('user', {
     norders: {
         type: Sequelize.INTEGER,
         defaultValue: 0
-    },
-    money_spent: {
-        type: Sequelize.FLOAT,
-        defaultValue: 0
     }
 }, {
     timestamps: false
@@ -74,7 +70,7 @@ const Order = db.define('order', {
     },
     status: {
         type: Sequelize.STRING,
-        defaultValue: 'processing'
+        defaultValue: 'przetwarzanie'
     },
     created_at: {
         type: 'TIMESTAMP',

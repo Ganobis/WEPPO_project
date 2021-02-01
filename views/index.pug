@@ -4,18 +4,18 @@ mixin product(imgSource, title, description, price, id)
     .col-sm-6.col-md-4
         .thumbnail.text-center
             a(href="/product/details/"+id)
-                img.img_responsive(src=imgSource alt="err")
+                img.img_responsive(src=imgSource alt="err" style='width:250px; height:350px; object-fit: contain;')
             .caption
                 a(href="/product/details/"+id)
-                    h3=title
-                p.description=description
+                    h4=title
                 div.clearfix
-                    .price.float-left=price + " $"
-                    if session.admin
-                        a.btn.btn-danger.float-right(href="/product/remove/"+id role="button") Remove
-                        a.btn.btn-info.float-right(href="/product/edit/"+id role="button") Edit
-                    else
-                        a.btn.btn-success.float-right(href="/cart/add/"+id role="button") Add to cart
+                    .price.float-center=price + " zł"
+                if session.admin
+                    a.btn.btn-danger.float-center(href="/product/remove/"+id role="button") Usuń
+                    a.btn.btn-info.float-center(href="/product/edit/"+id role="button") Edytuj
+                a.btn.btn-success.float-center(href="/cart/add/"+id role="button") Dodaj do koszyka
+                br
+                br
 
 block content
     .row.d-flex.justify-content-around

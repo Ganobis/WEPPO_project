@@ -1,0 +1,24 @@
+
+extends layout
+
+mixin product(imgSource, title, price, id, amount)
+    .col-sm-6.col-md-4
+        .thumbnail.text-center
+            img.img_responsive(src=imgSource alt="err" style='width:250px; height:400px; object-fit: contain;')
+            .caption
+                h3=title
+                div.clearfix
+                    .price.float-center=parseFloat(price).toFixed(2) + "zł x" + amount 
+                    .price.float-center="Razem: " + parseFloat(price * amount).toFixed(2) + "zł "
+                    a.btn.btn-success.float-center(href="/cart/add/"+id role="button") +
+                    a.btn.btn-danger.float-center(href="/cart/remove/"+id role="button") -
+
+block content
+    h2 Zamównienie
+    .row.d-flex.justify-content-around
+        each order in orders
+            - var product = order.product
+            +product(product.image, product.title, product.price, product.id, order.amount)
+    br
+    .thumbnail.text-right Całkowita cena: #{parseFloat(total_price).toFixed(2)}zł
+    a.btn.btn-success.float-right(href="/cart/make_order/" role="button") Zamów
