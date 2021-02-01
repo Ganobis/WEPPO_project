@@ -1,17 +1,17 @@
 extends layout
 
 mixin product(imgSource, title, description, price, id)
-        a()
-            img.img_responsive(src=imgSource alt="err" style='width:250px; height:350px; object-fit: contain;')
-        .caption
-            a.h4=title
-            div.clearfix
-                .price.float-center=price + " zł"
-            if session.admin
-                a.btn.btn-danger.float-center(href="/product/remove/"+id role="button") Usuń produkt
-                a.btn.btn-info.float-center(href="/product/edit/"+id role="button") Edytuj
-            a.btn.btn-success.float-center(href="/cart/add/"+id role="button") Dodaj do koszyka
-    description=description
+    a()
+        img.img_responsive(src=imgSource alt="err" style='width:250px; height:350px; object-fit: contain;')
+    .caption
+        a.h4=title
+        div.clearfix
+            .price.float-center=price + " zł"
+        if session.admin
+            a.btn.btn-danger.float-center(href="/product/remove/"+id role="button") Usuń produkt
+            a.btn.btn-info.float-center(href="/product/edit/"+id role="button") Edytuj
+        a.btn.btn-success.float-center(href="/cart/add/"+id role="button") Dodaj do koszyka
+    p.description=description
 
 block content
     .row.d-flex.justify-content-around
