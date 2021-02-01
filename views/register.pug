@@ -2,15 +2,15 @@ extends layout
 
 block content
     .col-sm-8.main-section.text-center
-        h2.float-left Sign Up
+        h2.float-left Rejestracja
         form.col-12(action="/register" method="POST")
             .form-group
-                input.form-control(type="text" placeholder="Enter Username" name="username")
+                input.form-control(type="text" placeholder="Login" name="username")
             .form-group
-                input.form-control(type="password" placeholder="Enter Password" name="password")
-            button.btn.btn-success(type="submit") Register
+                input.form-control(type="password" placeholder="Hasło" name="password")
+            button.btn.btn-success(type="submit") Zarejestruj
             if (errors != undefined) 
                 each err in errors
                     .alert.alert-danger=err.msg
         .col-12
-            a.links(href="/login") Already have an account?
+            a.links(href="/login") Posiadasz już konto?

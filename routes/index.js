@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     Product.findAll()
         .then(products =>
             res.render('index', {
-                title: 'Shop app',
+                title: 'Port-Able',
                 products,
                 session: req.session
             }))
@@ -24,14 +24,14 @@ router.get('/search', (req, res) => {
         res.redirect('/')
     } else {
         Product.findAll({
-            where: Sequelize.where(
-                Sequelize.fn('lower', Sequelize.col('title')), {
-                [Op.like]: '%'+term+'%'
-            }
-            )
-        })
+                where: Sequelize.where(
+                    Sequelize.fn('lower', Sequelize.col('title')), {
+                        [Op.like]: '%' + term + '%'
+                    }
+                )
+            })
             .then(products => res.render('index', {
-                title: 'Shop App',
+                title: 'Port-Able',
                 products,
                 session: req.session
             }))

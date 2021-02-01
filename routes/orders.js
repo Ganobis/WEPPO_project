@@ -8,20 +8,19 @@ router.get('/', (req, res, next) => {
         Order.findAll()
             .then(orders => {
                 res.render('orders', {
-                    title: 'Orders',
+                    title: 'Zamówienia',
                     session: req.session,
                     orders
                 });
             });
-    }
-    else if (req.session.valid) {
+    } else if (req.session.valid) {
         Order.findAll({
             where: {
                 customer: req.session.userid
             }
         }).then(orders => {
             res.render('orders', {
-                title: 'Orders',
+                title: 'Zamównienia',
                 session: req.session,
                 orders
             });
@@ -38,7 +37,7 @@ router.get('/change_status/:id', (req, res, next) => {
                 id: req.params.id
             }
         }).then(o => {
-            o.status = 'sent';
+            o.status = 'Wysłano';
             o.save().then(() => {
                 res.redirect('/orders');
             })

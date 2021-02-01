@@ -2,12 +2,12 @@ extends layout
 
 block content
     .col-sm-8.main-section.text-center
-        h2.float-left Sign In
+        h2.float-left Zaloguj
         form.col-12(action="/login" method="POST")
             .form-group
-                input.form-control(type="text" placeholder="Enter Username" name="username")
+                input.form-control(type="text" placeholder="Login" name="username")
             .form-group
-                input.form-control(type="password" placeholder="Enter Password" name="password")
-            button.btn.btn-success(type="submit") Login
+                input.form-control(type="password" placeholder="Hasło" name="password")
+            button.btn.btn-success(type="submit") Zaloguj
         .col-12
-            a.links(href="/register") Don't have an account?
+            a.links(href="/register") Załóż konto
