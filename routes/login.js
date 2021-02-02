@@ -5,7 +5,6 @@ const Op = Sequelize.Op;
 const User = require('../database').User;
 const bcrypt = require('bcrypt');
 
-/* GET login page. */
 router.get('/', function(req, res, next) {
     if (req.session.valid) {
         res.redirect('/');
@@ -16,9 +15,6 @@ router.get('/', function(req, res, next) {
 router.post('/', (req, res) => {
     username = req.body.username;
     password = req.body.password;
-
-    // console.log(username, password);
-
     User.findOne({
         where: {
             username: {

@@ -12,7 +12,6 @@ let db = new Sequelize('ofrm19ex90au08of', 'ekgc4xu0i6tyzjka', 'v9vgj5xalj2fm4o6
     }
 });
 
-
 const User = db.define('user', {
     username: {
         type: Sequelize.STRING

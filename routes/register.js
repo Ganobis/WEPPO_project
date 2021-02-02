@@ -5,7 +5,6 @@ let Sequelize = require('sequelize');
 let Op = Sequelize.Op;
 let bcrypt = require('bcrypt');
 
-/* GET register page. */
 router.get('/', function(req, res, next) {
     if (req.session.valid) {
         res.redirect('/');
@@ -13,26 +12,15 @@ router.get('/', function(req, res, next) {
     res.render('register', { title: 'Zarejestruj', session: req.session });
 });
 
-// router.get('/add', (req, res) => {
-//   User.create({
-//     username: 'Piotr',
-//     password: 'haslo'
-//   }).then(user => res.redirect('/register'))
-//   .catch(err => console.log(err));
-// })
-
 router.post('/', (req, res) => {
     const { username, password } = req.body;
     let errors = [];
-
     if (!username || !password) {
         errors.push({ msg: 'Uzypełnij login i hasło' });
     }
-
     if (password.length < 6) {
         errors.push({ msg: 'Hasło musi zawierać 6 liter/cyfr/znaków' });
     }
-
     if (errors.length > 0) {
         res.render('register', {
             title: 'Zarejestruj',
@@ -71,7 +59,6 @@ router.post('/', (req, res) => {
                 }))
             }
         });
-        // res.redirect('/login');
     }
 })
 

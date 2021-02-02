@@ -27,8 +27,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-// session
 app.use(session({
     secret: '654af64asd46w3',
     resave: false,
@@ -36,7 +34,7 @@ app.use(session({
     cookie: { maxAge: 2 * 60 * 60 * 1000 }
 }))
 
-app.use(cookieParser('dhfshserharhestjersefgtafh'))
+app.use(cookieParser('456dasd63adaw56das3'))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -45,7 +43,6 @@ app.use('/register', registerRouter);
 app.use('/product', productsRouter);
 app.use('/cart', cartRouter);
 app.use('/orders', ordersRouter);
-
 
 app.get('/logout', (req, res) => {
     req.session.destroy()
@@ -59,6 +56,5 @@ app.use('/', indexRouter);
 app.use(function(req, res, next) {
     res.status(404).render('404');
 });
-
 
 http.createServer(app).listen(process.env.PORT || 3000);

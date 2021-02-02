@@ -52,13 +52,11 @@ async function get_orders(cart) {
             amount: cart[id]
         })
     }
-
     return orders;
 }
 
 router.get('/checkout', (req, res, next) => {
     if (req.session.valid) {
-
         get_orders(req.session.cart).then(o => {
             res.render('checkout', {
                 title: 'Podsumowanie',
@@ -67,7 +65,6 @@ router.get('/checkout', (req, res, next) => {
                 total_price: o.reduce((acc, curr) => acc + (curr.amount * curr.product.price), 0)
             });
         });
-
     } else {
         res.redirect('/login');
     }

@@ -10,7 +10,6 @@ router.get('/details/:id', (req, res, next) => {
         }
     }).then(p => {
         if (!p) res.send('<h1>404</h1>');
-
         res.render('product', {
             title: "Port-Able | " + p.title,
             products: [p],
@@ -30,12 +29,10 @@ router.get('/add', (req, res, next) => {
 router.post('/add', (req, res) => {
     const { title, image, description, price } = req.body;
     let errors = [];
-
     if (req.session.admin) {
         if (!title || !image || !price) {
             errors.push({ msg: 'Uzupełnij nazwę i URL obrazka' });
         }
-
         if (errors.length > 0) {
             res.render('addproduct', {
                 title: 'Dodaj produkt',
@@ -94,14 +91,10 @@ router.get('/edit/:id', function(req, res, next) {
 router.post('/edit/:id', (req, res) => {
     const { title, image, description, price } = req.body;
     let errors = [];
-
-
     if (req.session.admin) {
         if (!title || !image || !price) {
             errors.push({ msg: 'Uzupełnij nazwę i URL obrazka' });
         }
-
-
         Product.findOne({
             where: {
                 id: req.params.id
@@ -118,7 +111,6 @@ router.post('/edit/:id', (req, res) => {
             } else {
                 errors.push({ msg: 'Nie znaleziono produktu' });
             }
-
             if (errors.length > 0) {
                 res.render('editproduct', {
                     title: 'Edytuj produkt',
