@@ -14,7 +14,7 @@ mixin product(imgSource, title, price, id, amount)
                     a.btn.btn-danger.float-center(href="/cart/remove/"+id role="button") -
 
 block content
-    h2 Zamównienie
+    h2 Zamówienie
     .row.d-flex.justify-content-around
         each order in orders
             - var product = order.product

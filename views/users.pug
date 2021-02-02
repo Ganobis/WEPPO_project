@@ -13,7 +13,7 @@ block content
                 th id
                 th Login
                 th Admin
-                th #orders
+                th Liczba zamówień
                 each user in users 
                     tr
                         +user(user.id, user.username, user.admin, user.norders)

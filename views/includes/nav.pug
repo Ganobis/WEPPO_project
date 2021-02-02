@@ -7,11 +7,11 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
             if session.admin
                 li.nav-item
                     a.nav-link(href='/users')
-                        | Urzytkownicy
+                        | Użytkownicy
                         span.sr-only (current)
                 li.nav-item
                     a.nav-link(href='/product/add')
-                        | Dodaj proukt
+                        | Dodaj produkt
                         span.sr-only (current)
         form.form-inline.my-2.my-lg-0(action="/search")
             input.form-control.mr-sm-2(type='search' placeholder='Szukaj...' aria-label='Search' name='term')
@@ -19,7 +19,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
         ul#management.navbar-nav.ml-auto
             li.nav-item.show.show
                 if session.admin
-                    a.nav-link(href="/orders") Lista zamównień
+                    a.nav-link(href="/orders") Lista zamówień
                 else
                     a.nav-link(href="/cart/checkout") Koszyk
             li.nav-item.dropdown.show
@@ -32,7 +32,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
                     if session.valid
                         a.dropdown-item(href='/logout') Wyloguj
                         if !session.admin
-                            a.dropdown-item(href='/orders') Moje zamówniea
+                            a.dropdown-item(href='/orders') Moje zamówienia
                     else
                         a.dropdown-item(href='/login') Zaloguj
                         a.dropdown-item(href='/register') Zarejestruj

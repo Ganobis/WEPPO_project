@@ -20,7 +20,7 @@ router.get('/', (req, res, next) => {
             }
         }).then(orders => {
             res.render('orders', {
-                title: 'Zamównienia',
+                title: 'Zamówienia',
                 session: req.session,
                 orders
             });
