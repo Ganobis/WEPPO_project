@@ -10,17 +10,24 @@ Jest to aplikacja sklepu internetowego. Możemy w niej dokonywać zakupów mają
 ## Link do aplikacji:
 `Port-Able`: https://intense-ravine-78001.herokuapp.com/
 
+
 ## Uruchamianie:
 Aby włączyć aplikacje należy uruchomić komendy:
+
 `$ npm install`
+
 `$ npm start`
+
 Później po odpaleniu aplikacji można przejść pod `localhost:3000` by zobaczyć stronę lokalnie.
 
 ## Konto:
 Każdy może założyć swoje konto.
 ### Konto zwykłego użytkownia:
-login: 123456
-hasło: 123456
+**login**: 123456
+
+**hasło**: 123456
+
 ### Konto administratora:
-login: root123
-hasło: root123
+**login**: root123
+
+**hasło**: root123
