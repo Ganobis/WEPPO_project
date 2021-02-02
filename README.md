@@ -5,7 +5,8 @@
 Wojciech Ganobis, Tomasz Woszczyński, Karol Cieślawski
 
 ## Opis:
-Jest to aplikacja sklepu internetowego. Możemy w niej dokonywać zakupów mając założone konto. Będąc adminem można dodawać i usuwać produkty oraz zmieniać status zamówień na wysłane.
+Jest to aplikacja sklepu internetowego. Sklep nazywa się **Port-Able** - sprzedajemy tylko urządzenia przenośne.  
+Na stronie możemy dokonywać zakupów mając założone konto. Będąc adminem można dodawać i usuwać produkty oraz zmieniać status zamówień na wysłane.
 
 ## Link do aplikacji:
 `Port-Able`: https://intense-ravine-78001.herokuapp.com/
