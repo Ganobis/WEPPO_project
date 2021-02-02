@@ -56,4 +56,9 @@ app.use(express.static("./static"));
 
 app.use('/', indexRouter);
 
+app.use(function(req, res, next) {
+    res.status(404).render('404');
+});
+
+
 http.createServer(app).listen(process.env.PORT || 3000);
